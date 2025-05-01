@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:jwt-analyzer"
+    - path: "./app/Main.hs"
+      component: "exe:jwt-analyzer"
+    - path: "./test"
+      component: "test:jwt-analyzer-test"

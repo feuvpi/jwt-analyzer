@@ -1,0 +1,9 @@
+# HLint configuration file
+# https://github.com/ndmitchell/hlint
+
+# Ignore some builtin hints
+- ignore: {name: "Use camelCase"}
+- ignore: {name: "Redundant do"}
+
+# Warn on excessive use of fromJust
+- warn: {name: "Use fromMaybe instead of fromJust"}

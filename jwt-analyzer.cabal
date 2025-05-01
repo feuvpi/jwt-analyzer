@@ -10,9 +10,36 @@ extra-doc-files: CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
+library
+    import:           warnings
+    exposed-modules:  JWT.Parser
+                    , JWT.Analysis
+                    , JWT.Vulnerability
+    build-depends:    base ^>=4.17.2.1
+                    , split
+                    , aeson
+                    , base64
+                    , text
+                    , bytestring
+                    , containers
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
 executable jwt-analyzer
     import:           warnings
     main-is:          Main.hs
     build-depends:    base ^>=4.17.2.1
+                    , jwt-analyzer
     hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite jwt-analyzer-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    main-is:          Spec.hs
+    build-depends:    base ^>=4.17.2.1
+                    , jwt-analyzer
+                    , hspec
+                    , QuickCheck
+    hs-source-dirs:   test
     default-language: Haskell2010
